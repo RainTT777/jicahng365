@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="index.css?v=8">
   <link rel="stylesheet" href="ranking.css?v=4">
 
-                                                                                                                                                                      <meta name="description" content="2026年精选科学上网机场排行榜：严选物理级 IPLC/IEPL 国际专线与多线 BGP 中转节点，全方位测评晚高峰网速、Ping延迟、4K/8K视频流媒体解锁及抗封锁稳定性。详细对比各机场月付套餐价格与带宽倍率，为您提供最权威靠谱的科学上网机场选购指南。">
+                                                                                                                                                                                                  <meta name="description" content="2026年精选科学上网机场排行榜：严选物理级 IPLC/IEPL 国际专线与多线 BGP 中转节点，全方位测评晚高峰网速、Ping延迟、4K/8K视频流媒体解锁及抗封锁稳定性。详细对比各机场月付套餐价格与带宽倍率，为您提供最权威靠谱的科学上网机场选购指南。">
   <link rel="canonical" href="https://yunguidaohang.com/articles/ranking.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="云轨导航">
@@ -28,7 +28,7 @@
     "description": "2026年精选科学上网机场排行榜：严选物理级 IPLC/IEPL 国际专线与多线 BGP 中转节点，全方位测评晚高峰网速、Ping延迟、4K/8K视频流媒体解锁及抗封锁稳定性。详细对比各机场月付套餐价格与带宽倍率，为您提供最权威靠谱的科学上网机场选购指南。",
     "image": "https://yunguidaohang.com/assets/images/new_logo.png",
     "datePublished": "2026-06-22T08:00:00+08:00",
-    "dateModified": "2026-07-27T16:49:59+08:00",
+    "dateModified": "2026-07-27T16:53:20+08:00",
     "author": {
       "@type": "Organization",
       "name": "云轨导航编辑团队",
@@ -127,12 +127,12 @@
       <!-- Filter Bar -->
       <div class="rk-filter-bar">
         <div class="rk-tabs">
-          <a href="javascript:void(0)" class="rk-tab active">全部推荐</a>
-          <a href="javascript:void(0)" class="rk-tab">稳定优先</a>
-          <a href="javascript:void(0)" class="rk-tab">速度优先</a>
-          <a href="javascript:void(0)" class="rk-tab">性价比</a>
-          <a href="javascript:void(0)" class="rk-tab">新手推荐</a>
-          <a href="javascript:void(0)" class="rk-tab">流媒体解锁</a>
+          <button type="button" class="rk-tab active">全部推荐</button>
+          <button type="button" class="rk-tab">稳定优先</button>
+          <button type="button" class="rk-tab">速度优先</button>
+          <button type="button" class="rk-tab">性价比</button>
+          <button type="button" class="rk-tab">新手推荐</button>
+          <button type="button" class="rk-tab">流媒体解锁</button>
         </div>
         <div class="rk-dropdowns">
           <div class="rk-select-custom" id="selectProtocol">
@@ -608,10 +608,14 @@
     // Tab click listeners
     tabs.forEach(tab => {
       tab.addEventListener("click", function(e) {
-        e.preventDefault();
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
         tabs.forEach(t => t.classList.remove("active"));
         this.classList.add("active");
         shuffleAndReorder();
+        return false;
       });
     });
 
@@ -621,22 +625,32 @@
       const label = select.querySelector(".rk-select-label");
       const options = select.querySelectorAll(".rk-option");
 
-      btn.addEventListener("click", function(e) {
-        e.stopPropagation();
-        customSelects.forEach(s => {
-          if (s !== select) s.classList.remove("open");
+      if (btn) {
+        btn.addEventListener("click", function(e) {
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          customSelects.forEach(s => {
+            if (s !== select) s.classList.remove("open");
+          });
+          select.classList.toggle("open");
+          return false;
         });
-        select.classList.toggle("open");
-      });
+      }
 
       options.forEach(option => {
         option.addEventListener("click", function(e) {
-          e.stopPropagation();
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
           options.forEach(opt => opt.classList.remove("active"));
           this.classList.add("active");
-          label.textContent = this.textContent;
+          if (label) label.textContent = this.textContent;
           select.classList.remove("open");
           shuffleAndReorder();
+          return false;
         });
       });
     });

@@ -116,6 +116,11 @@
   font-size: 0.9rem;
   border: 1px solid #e2e8f0;
   transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+  line-height: inherit;
+  display: inline-block;
 }
 .rk-tab.active, .rk-tab:hover {
   background: #2563eb;
