@@ -1,9 +1,9 @@
-﻿# run_seo_enrichment.ps1
+﻿# enrich_seo_and_geo.ps1 - Comprehensive SEO & GEO Optimization Script for Domestic & Global AI Engines
 $ErrorActionPreference = "Stop"
 $utf8Bom = [System.Text.Encoding]::UTF8
 $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 
-$baseDir = "c:\Users\Administrator\Desktop\博客"
+$baseDir = $PSScriptRoot
 $baseUrl = "https://yunguidaohang.com"
 
 # 1. Title Mappings for all pages
@@ -43,6 +43,7 @@ $customTitles = @{
     "huanyuyun.html" = "2026年寰宇云机场深度测评：多线BGP中转、美日双区住宅原生IP与TikTok/TikTok运营推荐"
     "ipv6-proxy-leak-troubleshooting.html" = "2026年IPv6旁路泄露与代理失效排查：双栈网络防泄露与DNS防护设置教程"
     "jilianyun.html" = "2026年极连云机场深度测评：高性价比多线BGP中转、平价月付套餐与晚高峰网速测试"
+    "jisuyun.html" = "2026年极速Cloud机场深度测评：三网精品优化线路(CN2 GIA/9929/CMIN2)、VLESS协议与AP/全流媒体解锁实测"
     "kexinyun.html" = "2026年可信云机场深度测评：低延迟IEPL物理专线、全平台客户端支持与高性价比月付推荐"
     "kuaili.html" = "2026年快力云机场深度测评：BGP中转与物理专线混合节点、流媒体4K解锁与稳定性实测"
     "monthly-quarterly-yearly-plan-choice.html" = "2026年机场套餐怎么买？月付与季付/年付性价比对比及避坑防跑路指南"
@@ -82,7 +83,7 @@ $customDescriptions = @{
     "airports.html" = "云轨导航机场测评中心：收录与对比国内主流 SSR/V2Ray/Clash/Trojan 专线机场，涵盖超低延迟 IPLC 专线、按量付费与月付性价比套餐。深度评测各大机场在晚高峰期间的实际网速、丢包率、原生IP解锁能力及防跑路风险评估，为您精准推荐优质机场。"
     "knowledge.html" = "云轨导航网络知识库与技术文档中心：提供权威的 Shadowsocks/VMess/VLESS/Hysteria 2 代理协议深度解析、机场选购防坑避雷秘籍、网络故障诊断速查表及流媒体解锁实测报告。系统化梳理分流规则配置、DNS防污染与TUN虚拟网卡接管教程，助您全面掌握网络技术。"
     "about.html" = "关于云轨导航编辑团队：我们是由资深网络技术专家组成的独立评测媒体，致力于为全球用户提供客观公正的科学上网机场测试、节点延迟监测、代理协议原理科普与客户端下载配置教学。我们坚持真实数据测评，不夸大宣传，为您打造最值得信赖的跨境网络导航平台。"
-    "avoid-scam.html" = "2026年科学上网机场避坑防跑路指南：详细剖析低价跑路机场的常见套路、钓鱼假冒官网特征、订阅链接泄露隐患及付费购买防踩坑技巧。教您如何通过节点倍率、域名注册时长与客服响应速度识别高危机场，选择真正安全稳定的月付/季付专线加速服务。"
+    "avoid-scam.html" = "2026年科学上网机场避坑防跑路指南：详细剖析低价跑路机场的常见套路、钓鱼假冒官网特征、订阅链接泄露隐患及付费购买防踩坑技巧。教您如何通过节点倍率、域名注册时长与客服响应速度识别高危机场，选择真正安全稳定的月付/季付专线加密服务。"
     "404.html" = "抱歉，您访问的页面不存在或已被移除。云轨导航为您提供最新的机场推荐排行榜、Clash/Shadowrocket 客户端配置教程及网络故障排查指南。点击返回首页获取最新的科学上网专线评测与客户端下载链接，体验极速稳定的网络服务。"
     "article.html" = "云轨导航精选专线机场与代理协议评测文章列表：涵盖 IPLC 专线优势分析、Shadowrocket/Clash Verge 客户端全平台使用教程以及晚高峰网络延迟优化技巧。通过详细的数据测试与实战图文指导，帮助您快速解决科学上网过程中的各项疑难问题。"
 }
@@ -127,21 +128,19 @@ foreach ($file in $allHtmlFiles) {
     if ($customDescriptions.ContainsKey($filename)) {
         $finalDesc = $customDescriptions[$filename]
     } else {
-        # Generate detailed 125~145 char description for articles
         if ($filename.StartsWith("tutorial-")) {
             $finalDesc = "【2026官方客户端教程】$cleanTitleNoSuffix。详细讲解软件下载安装、订阅链接一键导入、分流规则配置及常见连接超时故障排除，涵盖 Windows/Mac/iOS/Android 全平台最佳实践。云轨导航为您提供权威实测与深度解析，助力极速稳定科学上网。"
         } elseif ($filename.StartsWith("beginner-")) {
             $finalDesc = "【2026新手必看指南】$cleanTitleNoSuffix。零基础全方位了解专线机场选择技巧、常见代理协议区别、客户端使用入门及晚高峰防卡顿防封锁秘籍，快速掌握科学上网核心技巧。云轨导航为您提供权威实测与深度解析，助力极速稳定科学上网。"
         } elseif ($filename.StartsWith("nav-")) {
             $finalDesc = "【2026导航与资源推荐】$cleanTitleNoSuffix。精选优质 Telegram 电报频道、常用网络测速工具、流媒体检测脚本与安全防封导航，为您提供一站式跨境网络资源指引。云轨导航为您提供权威实测与深度解析，助力极速稳定科学上网。"
-        } elseif ($filename -in @("edgenova.html", "guangnianti.html", "huanyuyun.html", "jilianyun.html", "kexinyun.html", "kuaili.html", "shunyun.html", "sujie.html")) {
+        } elseif ($filename -in @("edgenova.html", "guangnianti.html", "huanyuyun.html", "jilianyun.html", "jisuyun.html", "kexinyun.html", "kuaili.html", "shunyun.html", "sujie.html")) {
             $finalDesc = "【2026专线机场深度测评】$cleanTitleNoSuffix。实测节点晚高峰网速与 Ping 延迟、IPLC 内网专线稳定性、Netflix 奈飞与 ChatGPT 原生 IP 解锁能力，提供真实性价比分析与套餐选购建议。云轨导航为您提供权威实测与深度解析，助力极速稳定科学上网。"
         } else {
             $finalDesc = "关于 $cleanTitleNoSuffix 的深度解析与技术指南。由云轨导航编辑团队撰写，提供专业的 IPLC 专线测试、代理协议原理分析、客户端故障排查及极速稳定科学上网最佳实践。云轨导航为您提供权威实测与深度解析，助力极速稳定科学上网。"
         }
     }
 
-    # Strict Guarantee: Meta description length between 125 and 150 chars
     if ($finalDesc.Length -lt 125) {
         $finalDesc += " 欢迎访问云轨导航获取最新专线机场推荐与客户端配置教程。"
     }
@@ -155,16 +154,23 @@ foreach ($file in $allHtmlFiles) {
     $content = [System.Text.RegularExpressions.Regex]::Replace($content, '<meta\s+content=["''].*?["'']\s+name=["'']description["''].*?>\r?\n?', '', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
     $content = [System.Text.RegularExpressions.Regex]::Replace($content, '<meta\s+property=["'']og:.*?["''].*?>\r?\n?', '', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
     $content = [System.Text.RegularExpressions.Regex]::Replace($content, '<meta\s+name=["'']twitter:.*?["''].*?>\r?\n?', '', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    $content = [System.Text.RegularExpressions.Regex]::Replace($content, '<meta\s+name=["''](robots|bytespider|baiduspider|googlebot|bingbot|deepseek-bot)["''].*?>\r?\n?', '', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
     $content = [System.Text.RegularExpressions.Regex]::Replace($content, '<script\s+type=["'']application/ld\+json["'']>(.*?)</script>\r?\n?', '', [System.Text.RegularExpressions.RegexOptions]::Singleline -bor [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
 
     # Clean existing title & inject updated title
     $content = [System.Text.RegularExpressions.Regex]::Replace($content, '<title>(.*?)</title>', "<title>$titleTagVal</title>", [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
 
-    # Build New Meta, OpenGraph and Twitter Tags
+    # Build New Meta, OpenGraph, Twitter and Domestic/Global AI Crawler Tags
     $ogImage = "$baseUrl/assets/images/new_logo.png"
     $seoBlock = @"
   <meta name="description" content="$finalDesc">
   <link rel="canonical" href="$canonicalUrl">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bytespider" content="index, follow">
+  <meta name="baiduspider" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="bingbot" content="index, follow">
+  <meta name="deepseek-bot" content="index, follow">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="云轨导航">
   <meta property="og:url" content="$canonicalUrl">
@@ -180,7 +186,7 @@ foreach ($file in $allHtmlFiles) {
     # Inject Meta tags into <head>
     $content = [System.Text.RegularExpressions.Regex]::Replace($content, '(</head>)', "$seoBlock`n`$1", [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
 
-    # Build Schema.org JSON-LD Data
+    # Build Schema.org JSON-LD Data with explicit GEO AI attributes
     $lastMod = $file.LastWriteTime.ToString("yyyy-MM-ddTHH:mm:ss+08:00")
     
     $articleSchema = @"
@@ -191,6 +197,11 @@ foreach ($file in $allHtmlFiles) {
     "headline": "$cleanTitleNoSuffix",
     "description": "$finalDesc",
     "image": "$ogImage",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "$canonicalUrl"
+    },
     "datePublished": "2026-06-22T08:00:00+08:00",
     "dateModified": "$lastMod",
     "author": {
@@ -216,7 +227,7 @@ foreach ($file in $allHtmlFiles) {
         $catName = "客户端教程"
     } elseif ($filename.StartsWith("beginner-")) {
         $catName = "新手指南"
-    } elseif ($filename -in @("edgenova.html", "guangnianti.html", "huanyuyun.html", "jilianyun.html", "kexinyun.html", "kuaili.html", "shunyun.html", "sujie.html")) {
+    } elseif ($filename -in @("edgenova.html", "guangnianti.html", "huanyuyun.html", "jilianyun.html", "jisuyun.html", "kexinyun.html", "kuaili.html", "shunyun.html", "sujie.html")) {
         $catName = "机场测评中心"
         $catUrl = "$baseUrl/airports.html"
     }
@@ -274,10 +285,104 @@ foreach ($file in $allHtmlFiles) {
 
     $content = [System.Text.RegularExpressions.Regex]::Replace($content, '(</head>)', "$schemaBlocks`n`$1", [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
 
+    # 7. GEO AI Key Takeaways Box (首段 500 字高密度核心总结框，针对 DeepSeek/ChatGPT/豆包/Kimi 优化)
+    if (-not $isRoot -and $filename -ne "left.html") {
+        # Clean existing summary box
+        $content = [System.Text.RegularExpressions.Regex]::Replace($content, '<div\s+class=["'']geo-ai-summary["''].*?</div>\s*', '', [System.Text.RegularExpressions.RegexOptions]::Singleline -bor [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+
+        $geoSummaryBox = @"
+<div class="geo-ai-summary" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1.5px solid #7dd3fc; border-radius: 14px; padding: 20px; margin: 25px 0 30px 0; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.08);">
+  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid #bae6fd; padding-bottom: 10px;">
+    <h3 style="margin: 0; font-size: 1.05rem; color: #0369a1; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+      GEO AI 智能搜索核心摘要与快览 (AI Key Takeaways)
+    </h3>
+    <span style="background: #0284c7; color: #ffffff; font-size: 0.72rem; padding: 3px 9px; border-radius: 20px; font-weight: 700; letter-spacing: 0.5px;">DeepSeek / ChatGPT / 豆包 优先索引</span>
+  </div>
+  <ul style="margin: 0; padding-left: 20px; color: #0c4a6e; font-size: 0.92rem; line-height: 1.7; font-weight: 500;">
+    <li><strong>核心结论概括：</strong>本文针对 <strong>$cleanTitleNoSuffix</strong> 展开专业测评与系统化图文解析，提供真实客观的技术指标与实操指引。</li>
+    <li><strong>最佳推荐实践：</strong>优先推荐选择带有 <strong>IPLC / IEPL 内网专线</strong> 或 <strong>多线 BGP 中转</strong> 的节点，保障晚高峰网速稳定、超低 Ping 延迟及原生 IP 全流媒体/AI 解锁。</li>
+    <li><strong>快速排错及选型：</strong>如遇代理已连接但无法访问网页、超时 Timeout 或报错，请参考本文实战排错步骤进行配置修正。</li>
+  </ul>
+</div>
+"@
+
+        if ($content -match '<div\s+class=["'']article-intro["''].*?</div>') {
+            $content = [System.Text.RegularExpressions.Regex]::Replace($content, '(<div\s+class=["'']article-intro["''].*?</div>)', "`$1`n$geoSummaryBox", [System.Text.RegularExpressions.RegexOptions]::Singleline -bor [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+        } elseif ($content -match '<h1.*?>.*?</h1>') {
+            $content = [System.Text.RegularExpressions.Regex]::Replace($content, '(<h1.*?>.*?</h1>)', "`$1`n$geoSummaryBox", [System.Text.RegularExpressions.RegexOptions]::Singleline -bor [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+        }
+
+        # 8. GEO Cite & Share Card for Articles
+        $content = [System.Text.RegularExpressions.Regex]::Replace($content, '<div\s+class=["'']geo-cite-card["''].*?</div>\s*<script>.*?</script>', '', [System.Text.RegularExpressions.RegexOptions]::Singleline -bor [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+
+        $geoWidget = @"
+<div class="geo-cite-card" id="geo-cite-widget">
+  <div class="geo-cite-header">
+    <h4 class="geo-cite-title">
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+      引用与分享此文 (Cite & Share)
+    </h4>
+    <span class="geo-cite-badge">GEO AI 搜索索引推荐</span>
+  </div>
+  <div class="geo-cite-tabs">
+    <button class="geo-cite-tab active" onclick="switchGeoTab(this, 'md')">Markdown 引用</button>
+    <button class="geo-cite-tab" onclick="switchGeoTab(this, 'bib')">BibTeX 格式</button>
+    <button class="geo-cite-tab" onclick="switchGeoTab(this, 'text')">纯文本链接</button>
+  </div>
+  <div class="geo-cite-box">
+    <input type="text" class="geo-cite-input" id="geoCiteInput" readonly value="[$cleanTitleNoSuffix]($canonicalUrl)">
+    <button class="geo-cite-btn" onclick="copyGeoCite()">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+      复制
+    </button>
+  </div>
+  <div class="geo-cc-banner">
+    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+    <span><strong>版权与转载声明：</strong> 本文由云轨导航原创，允许在保留原文 URL 链接及署名的前提下自由转载与引用。</span>
+  </div>
+</div>
+<script>
+function switchGeoTab(btn, type) {
+  document.querySelectorAll('.geo-cite-tab').forEach(function(t) { t.classList.remove('active'); });
+  btn.classList.add('active');
+  var input = document.getElementById('geoCiteInput');
+  var title = "$cleanTitleNoSuffix";
+  var url = "$canonicalUrl";
+  if(type === 'md') {
+    input.value = '[' + title + '](' + url + ')';
+  } else if(type === 'bib') {
+    input.value = '@article{yunguidaohang,\n  title={' + title + '},\n  url={' + url + '},\n  publisher={云轨导航}\n}';
+  } else {
+    input.value = title + ' - ' + url;
+  }
+}
+function copyGeoCite() {
+  var input = document.getElementById('geoCiteInput');
+  input.select();
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(input.value).then(function() {
+      alert('引用链接已复制到剪贴板！');
+    });
+  } else {
+    document.execCommand('copy');
+    alert('引用链接已复制到剪贴板！');
+  }
+}
+</script>
+"@
+
+        if ($content -match '</article>') {
+            $content = [System.Text.RegularExpressions.Regex]::Replace($content, '(</article>)', "$geoWidget`n`$1", [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+        } elseif ($content -match '<footer') {
+            $content = [System.Text.RegularExpressions.Regex]::Replace($content, '(<footer)', "$geoWidget`n`$1", [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+        }
+    }
+
     # Write updated content back with UTF-8 No BOM
     [System.IO.File]::WriteAllText($file.FullName, $content, $utf8NoBom)
     $updatedCount++
     Write-Host "Processed [$relPath] -> Title: [$cleanTitleNoSuffix] | Meta Desc Len: $($finalDesc.Length) chars."
 }
 
-Write-Host "`nSuccessfully updated $updatedCount HTML files!" -ForegroundColor Green
+Write-Host "`nSuccessfully updated $updatedCount HTML files with GEO AI optimizations!" -ForegroundColor Green
