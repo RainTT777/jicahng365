@@ -1,7 +1,7 @@
 # submit_indexnow.ps1 - Submit website URLs from sitemap to IndexNow and Bing APIs
 $baseDir = Get-Location
 $sitemapPath = Join-Path $baseDir "sitemap.xml"
-$key = "2d54406bc91741549e3e7f4bd802613d"
+$key = "c6d258a7479a4585a25b2b9ea538d7e0"
 $hostName = "yunguidaohang.com"
 $keyLocation = "https://yunguidaohang.com/$key.txt"
 
