@@ -6,7 +6,7 @@
   <title>2026年极速Cloud（极速云导航）深度测评：三网精品优化线路(CN2 GIA/9929/CMIN2)、VLESS协议与AP/全流媒体解锁实测 - 云轨导航</title>
   <link rel="stylesheet" href="../index.css?v=6">
 
-                                                                                      <meta name="description" content="关于 2026年极速Cloud（极速云导航）深度测评：三网精品优化线路(CN2 GIA/9929/CMIN2)、VLESS协议与AP/全流媒体解锁实测 的深度解析与技术指南。由云轨导航编辑团队撰写，提供专业的 IPLC 专线测试、代理协议原理分析、客户端故障排查及极速稳定科学上网最佳实践。...">
+                                                                                                                                              <meta name="description" content="关于 2026年极速Cloud（极速云导航）深度测评：三网精品优化线路(CN2 GIA/9929/CMIN2)、VLESS协议与AP/全流媒体解锁实测 的深度解析与技术指南。由云轨导航编辑团队撰写，提供专业的 IPLC 专线测试、代理协议原理分析、客户端故障排查及极速稳定科学上网最佳实践。...">
   <link rel="canonical" href="https://yunguidaohang.com/articles/jisuyun.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="云轨导航">
@@ -26,7 +26,7 @@
     "description": "关于 2026年极速Cloud（极速云导航）深度测评：三网精品优化线路(CN2 GIA/9929/CMIN2)、VLESS协议与AP/全流媒体解锁实测 的深度解析与技术指南。由云轨导航编辑团队撰写，提供专业的 IPLC 专线测试、代理协议原理分析、客户端故障排查及极速稳定科学上网最佳实践。...",
     "image": "https://yunguidaohang.com/assets/images/new_logo.png",
     "datePublished": "2026-06-22T08:00:00+08:00",
-    "dateModified": "2026-07-27T16:34:42+08:00",
+    "dateModified": "2026-07-27T16:44:19+08:00",
     "author": {
       "@type": "Organization",
       "name": "云轨导航编辑团队",
@@ -123,10 +123,8 @@
             
             <div class="article-body" id="articleBody">
 <div style="text-align: center; margin: 40px 0 30px 0;">
-    <div style="display: inline-flex; align-items: center; justify-content: center; width: 140px; height: 140px; background: linear-gradient(135deg, #0284c7, #2563eb); border-radius: 28px; box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3); color: #ffffff; font-size: 3rem; font-weight: 900;">
-        ⚡
-    </div>
-    <h3 style="margin-top: 15px; font-size: 1.5rem; color: #1e293b; font-weight: 800;">极速Cloud (极速云)</h3>
+    <img src="../assets/images/jisuyun_logo.png" alt="极速Cloud Logo" style="width: 240px; height: 240px; object-fit: cover; border-radius: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.15);">
+    <h3 style="margin-top: 15px; font-size: 1.5rem; color: #1e293b; font-weight: 800;">极速Cloud (极速云导航)</h3>
     <p style="color: #64748b; font-size: 0.95rem; margin-top: 5px;">官方入口：<a href="https://august.jsjc456789.com" target="_blank" rel="nofollow noopener noreferrer" style="color: #2563eb; font-weight: 700; text-decoration: underline;">极速云导航.com (点击直达官网注册)</a></p>
 </div>
 
@@ -490,5 +488,55 @@ function copyGeoCite() {
     </div>
   </footer>
   <script src="../script.js"></script>
+<script>
+// Dynamic TOC Generation
+document.addEventListener("DOMContentLoaded", function() {
+    const articleBody = document.getElementById('articleBody');
+    const tocNav = document.getElementById('toc');
+    if(!articleBody || !tocNav) return;
+    
+    const headers = articleBody.querySelectorAll('h2, h3');
+    if(headers.length === 0) return;
+    
+    const ul = document.createElement('ul');
+    ul.className = 'toc-list';
+    
+    headers.forEach((header, index) => {
+        const id = 'heading-' + index;
+        header.id = id;
+        
+        const li = document.createElement('li');
+        li.className = header.tagName.toLowerCase() === 'h2' ? 'toc-h2' : 'toc-h3';
+        
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = header.textContent;
+        
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+    
+    tocNav.appendChild(ul);
+    
+    // Highlight active TOC item on scroll
+    const tocLinks = tocNav.querySelectorAll('a');
+    window.addEventListener('scroll', () => {
+        let currentId = '';
+        headers.forEach(header => {
+            const rect = header.getBoundingClientRect();
+            if(rect.top <= 100) {
+                currentId = header.id;
+            }
+        });
+        
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + currentId) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
