@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【空岛检测报告·001号】EdgeNova：晚高峰千兆带宽与全流媒体解锁实测 - 零重力飞艇</title>
+  <meta name="description" content="零重力飞艇探险队对 EdgeNova 空岛进行了72小时深度测评。涵盖 IEPL 专线 Ping 值测试、晚高峰 Speedtest 跑分、Netflix / ChatGPT 流媒体及 AI 工具解锁测试。">
+  <meta name="keywords" content="EdgeNova,EdgeNova测评,EdgeNova机场,IEPL专线,机场推荐,ChatGPT解锁,节点跑分">
+  <link rel="stylesheet" href="zerog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "EdgeNova 机场"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "9.6",
+      "bestRating": "10"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "零重力飞艇探险队"
+    }
+  }
+  </script>
+</head>
+<body class="zerog-theme">
+
+  <!-- Header -->
+  <header class="zg-header">
+    <div class="zg-container zg-header-inner">
+      <a href="zerog_index.html" class="zg-brand">
+        <div class="zg-brand-icon">⚙️</div>
+        <div>
+          <span class="zg-brand-title">零重力飞艇</span>
+          <span class="zg-brand-sub">THE ZERO-G AIRSHIP</span>
+        </div>
+      </a>
+      <nav class="zg-nav">
+        <a href="zerog_index.html" class="zg-nav-link active">📖 航海日志</a>
+        <a href="zerog_index.html#atlas" class="zg-nav-link">🗾 空岛图谱</a>
+        <a href="zerog_index.html#alerts" class="zg-nav-link">⚡ 风暴警报</a>
+        <a href="zerog_index.html#instruments" class="zg-nav-link">🔭 仪器舱</a>
+        <a href="zerog_index.html#supplies" class="zg-nav-link">📦 补给站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="zg-container">
+    
+    <!-- Article Header -->
+    <header class="zg-article-header">
+      <div class="zg-hero-badge">📜 航海日志 · 第 001 号勘测报告</div>
+      <h1 class="zg-article-title">【空岛检测报告·001号】EdgeNova：晚高峰千兆带宽与全流媒体解锁实测</h1>
+      <div class="zg-report-meta" style="font-size: 0.9rem;">
+        <span>📅 勘探日期：2025 年 07 月 28 日</span>
+        <span>✍️ 首席探险家：飞艇长</span>
+        <span>🌐 线路分类：IEPL 专线</span>
+        <span>⭐ 浮力综合评分：9.6 / 10</span>
+      </div>
+      <p class="zg-article-quote">
+        "本艇于 2025 年 7 月以黄铜气压计与钢铁意志，对 EdgeNova 这座空岛展开了 72 小时的全面勘探。以下是我们留在羊皮纸上的最真实记录。"
+      </p>
+    </header>
+
+    <!-- Main Content Area -->
+    <article style="background: var(--bg-card); border: 1px solid var(--border-brass); border-radius: 12px; padding: 40px; margin-bottom: 40px;">
+      
+      <!-- 基础档案 -->
+      <h2 class="zg-sec-title">📌 空岛档案（基础信息速览）</h2>
+      <div class="zg-table-wrapper">
+        <table class="zg-table">
+          <thead>
+            <tr>
+              <th>勘测维度</th>
+              <th>参数读数与详情</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>空岛代号（机场名）</strong></td>
+              <td>EdgeNova</td>
+            </tr>
+            <tr>
+              <td><strong>浮力等级（线路类型）</strong></td>
+              <td>IEPL 国际专线 / BGP 多线中转</td>
+            </tr>
+            <tr>
+              <td><strong>最低月租（入门套餐）</strong></td>
+              <td>¥ 15.00 / 月（含 150GB 流量）</td>
+            </tr>
+            <tr>
+              <td><strong>协议支持</strong></td>
+              <td>Shadowsocks / Trojan / Hysteria 2</td>
+            </tr>
+            <tr>
+              <td><strong>节点覆盖范围</strong></td>
+              <td>香港、日本、台湾、新加坡、美国、英国等 30+ 节点</td>
+            </tr>
+            <tr>
+              <td><strong>客户端支持</strong></td>
+              <td>Clash Verge / Shadowrocket / v2rayNG / Sing-box</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 速度与跑分 -->
+      <h2 class="zg-sec-title">🔬 一、仪器读数——速度与 Ping 值测试</h2>
+      <p style="margin-bottom: 16px; color: var(--text-muted);">
+        *测试环境：电信 1000M 宽带，测试工具为 Speedtest CLI，测试时间段为晚上 21:00 晚高峰高峰期。
+      </p>
+
+      <div class="zg-table-wrapper">
+        <table class="zg-table">
+          <thead>
+            <tr>
+              <th>节点名称</th>
+              <th>线路类型</th>
+              <th>晚高峰 Ping 延迟</th>
+              <th>下载速度</th>
+              <th>丢包率</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>香港 HK-01 (IEPL)</strong></td>
+              <td>IEPL 专线</td>
+              <td>35 ms</td>
+              <td>480 Mbps</td>
+              <td>0.0%</td>
+            </tr>
+            <tr>
+              <td><strong>日本 JP-01 (IEPL)</strong></td>
+              <td>IEPL 专线</td>
+              <td>72 ms</td>
+              <td>390 Mbps</td>
+              <td>0.0%</td>
+            </tr>
+            <tr>
+              <td><strong>新加坡 SG-02</strong></td>
+              <td>BGP 中转</td>
+              <td>88 ms</td>
+              <td>280 Mbps</td>
+              <td>0.2%</td>
+            </tr>
+            <tr>
+              <td><strong>美国 US-01</strong></td>
+              <td>BGP 中转</td>
+              <td>165 ms</td>
+              <td>210 Mbps</td>
+              <td>0.5%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 流媒体与 AI 解锁 -->
+      <h2 class="zg-sec-title">🎬 二、空岛宜居性——流媒体 & AI 工具解锁测试</h2>
+      <p style="margin-bottom: 16px; color: var(--text-muted);">
+        一座空岛能否宜居，不仅要看风速，还要看它能否顺畅接收外界文明的信号。
+      </p>
+
+      <div class="zg-table-wrapper">
+        <table class="zg-table">
+          <thead>
+            <tr>
+              <th>测试目标服务</th>
+              <th>香港节点</th>
+              <th>日本节点</th>
+              <th>美国节点</th>
+              <th>探险队评语</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Netflix (网飞)</strong></td>
+              <td>✅ 原生解锁</td>
+              <td>✅ 原生解锁</td>
+              <td>✅ 原生解锁</td>
+              <td>4K 超高清秒加载，支持完整自制剧</td>
+            </tr>
+            <tr>
+              <td><strong>Disney+</strong></td>
+              <td>✅ 支持</td>
+              <td>✅ 支持</td>
+              <td>✅ 支持</td>
+              <td>流畅播放无卡顿</td>
+            </tr>
+            <tr>
+              <td><strong>ChatGPT (OpenAI)</strong></td>
+              <td>⚠️ 需分流</td>
+              <td>✅ 完全支持</td>
+              <td>✅ 完全支持</td>
+              <td>未触发 1020 阻断防护网页</td>
+            </tr>
+            <tr>
+              <td><strong>Claude (Anthropic)</strong></td>
+              <td>❌ 受限</td>
+              <td>✅ 支持</td>
+              <td>✅ 完全支持</td>
+              <td>美国节点极其稳定</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 性价比分析 -->
+      <h2 class="zg-sec-title">⚙️ 三、动力舱检测——套餐与性价比</h2>
+      <div class="zg-table-wrapper">
+        <table class="zg-table">
+          <thead>
+            <tr>
+              <th>套餐名称</th>
+              <th>月付价格</th>
+              <th>每月流量</th>
+              <th>同时在线设备</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>轻量航行包</td>
+              <td>¥15 / 月</td>
+              <td>150 GB</td>
+              <td>3 台</td>
+            </tr>
+            <tr>
+              <td>远征探险包</td>
+              <td>¥30 / 月</td>
+              <td>350 GB</td>
+              <td>5 台</td>
+            </tr>
+            <tr>
+              <td>旗舰无界包</td>
+              <td>¥58 / 月</td>
+              <td>800 GB</td>
+              <td>不限制</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 飞艇长判决 -->
+      <h2 class="zg-sec-title">🗺️ 四、探险家总结——飞艇长判决</h2>
+      <div style="background: rgba(201, 151, 56, 0.08); border-left: 4px solid var(--brass-gold); padding: 20px; border-radius: 4px; margin: 20px 0;">
+        <h3 style="color: var(--brass-light); margin-bottom: 10px;">⚓ 飞艇长最终总结报告</h3>
+        <p style="line-height: 1.8;">
+          EdgeNova 是目前我们在数字天空测得的最具保障的空岛之一。其主力 IEPL 专线在晚高峰期间表现出极高的弹性和稳定性，丢包率趋近于零。无论你是需要稳定连接 ChatGPT 的 AI 开发者，还是追求 4K 极速体验的流媒体爱好者，该站点都是首选的远征补给站。
+        </p>
+      </div>
+
+      <!-- 常见问题 FAQ -->
+      <h2 class="zg-sec-title">❓ 常见问题（FAQ）</h2>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div>
+          <h4 style="color: var(--brass-light);">Q: EdgeNova 适合打游戏吗？</h4>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">答：其香港和日本的 IEPL 专线节点延迟在 35-72ms 之间且 0 丢包，非常适合美服/亚服游戏加速。</p>
+        </div>
+        <div>
+          <h4 style="color: var(--brass-light);">Q: 如何在 Clash Verge 中使用 EdgeNova？</h4>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">答：复制官网一键订阅链接，粘贴至 Clash Verge 的订阅管理框内点击导入即可开启全局或规则分流模式。</p>
+        </div>
+      </div>
+
+      <!-- 补给站入口 -->
+      <div style="text-align: center; margin-top: 40px; padding: 30px; background: rgba(0,0,0,0.3); border: 1px dashed var(--border-brass-bright); border-radius: 8px;">
+        <h3 style="color: var(--brass-light); margin-bottom: 12px;">📦 登上 EdgeNova 空岛</h3>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">使用探险队专属补给链接，享受官网专属折扣：</p>
+        <a href="#" style="display: inline-block; padding: 12px 30px; background: var(--brass-gold); color: var(--text-dark); text-decoration: none; font-weight: 700; border-radius: 4px; font-family: var(--font-heading);">
+          👉 直达 EdgeNova 官方补给站
+        </a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="zg-footer">
+    <div class="zg-container" style="text-align: center;">
+      <p>© 2025-2026 零重力飞艇 (The Zero-G Airship). 探险日志 001 号归档完结。</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -12,7 +12,7 @@ custom_descriptions = {
     "ranking.html": "2026年精选科学上网机场排行榜，严选物理级 IPLC/IEPL 国际专线与多线 BGP 节点，全方位测评晚高峰网速、延迟、4K/8K视频流媒体解锁及稳定性，为您提供性价比高且靠谱的机场推荐。",
     "airports.html": "云轨导航机场测评中心：收录与对比国内主流 SSR/V2Ray/Clash/Trojan 专线机场，涵盖超低延迟 IPLC 专线、按量付费与月付性价比套餐，深度评测节点晚高峰网速与解锁能力。",
     "knowledge.html": "云轨导航网络知识库与技术文档中心：提供权威的 Shadowsocks/VMess/VLESS/Hysteria 2 协议深度解析、机场选购防坑避雷秘籍、网络故障诊断速查表及流媒体解锁实测报告。",
-    "about.html": "关于云轨导航编辑团队：我们是由资深网络技术专家组成的独立评测媒体，致力于为全球用户提供客观公正的科学上网机场测试、节点延迟监测、代理协议科普与客户端下载配置教学。",
+    "about.html": "关于云轨导航编辑团队：我们是由资深网络技术专家组成的独立评测媒体，致力于为全球用户提供客观公正的科学上网机场测试、节点延迟监测、代理协议原理科普与客户端下载配置教学。",
     "avoid-scam.html": "科学上网机场避坑防跑路指南：详细剖析低价跑路机场的常见套路、钓鱼假冒官网特征、订阅链接泄露隐患及付费购买防踩坑技巧，教您如何选择安全稳定的月付专线机场。",
     "404.html": "抱歉，您访问的页面不存在或已被移除。云轨导航为您提供最新的机场推荐排行榜、Clash/Shadowrocket 客户端配置教程及网络故障排查指南，点击返回首页获取更多内容。",
     "article.html": "云轨导航精选专线机场与代理协议评测文章：涵盖 IPLC 专线优势分析、Shadowrocket/Clash Verge 客户端全平台使用教程以及晚高峰网络延迟优化技巧。"
@@ -144,14 +144,6 @@ for file_path in files:
         ]
     }
 
-    schema_script = f"""  <script type="application/ld+json">
-{re.sub(r'^', '  ', repr(article_schema), flags=re.M)}
-  </script>
-  <script type="application/ld+json">
-{re.sub(r'^', '  ', repr(breadcrumb_schema), flags=re.M)}
-  </script>"""
-
-    # Format JSON strings cleanly
     import json
     schema_script = f"""  <script type="application/ld+json">
 {json.dumps(article_schema, ensure_ascii=False, indent=2)}
@@ -239,8 +231,8 @@ function copyGeoCite() {{
 
         if "</article>" in content:
             content = re.sub(r'(</article>)', f'{geo_widget}\n\\1', content, count=1, flags=re.IGNORECASE)
-        elif "<footer" in content:
-            content = re.sub(r'(<footer)', f'{geo_widget}\n\\1', count=1, flags=re.IGNORECASE)
+        elif "</main>" in content:
+            content = re.sub(r'(</main>)', f'{geo_widget}\n\\1', content, count=1, flags=re.IGNORECASE)
 
     with open(file_path, "w", encoding="utf-8") as fp:
         fp.write(content)
