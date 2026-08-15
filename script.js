@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (pageKey.includes("kexinyun")) airportName = "可信云";
     else if (pageKey.includes("shunyun")) airportName = "瞬云";
     else if (pageKey.includes("kuaili")) airportName = "快狸";
+    else if (pageKey.includes("yuntu")) airportName = "云图";
 
     const pools = {
       tutorial: [
@@ -242,6 +243,18 @@ document.addEventListener('DOMContentLoaded', () => {
           replies: []
         }
       ],
+      yuntu: [
+        {
+          name: "专线狂热粉",
+          content: "云图机场的金融级专线确实稳，全节点 1 倍率扣费非常靠谱，拿来看 Netflix 4K 和使用 ChatGPT 完全不卡顿！",
+          replies: []
+        },
+        {
+          name: "数字游民",
+          content: "试用了一下梦图套餐，300G 流量加上 5 台设备同在，全节点没有虚高倍率陷阱，晚高峰测速非常满意！",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "感谢支持！云图机场全线采用金融级专线与诚实倍率，保障用户 24 小时高速畅连。" }]
+        }
+      ],
       knowledge: [
         {
           name: "技术先锋",
@@ -268,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (pageKey.includes("scam") || pageKey.includes("blacklist")) {
       cat = "scam";
     } else {
-      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili"];
+      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili", "yuntu"];
       for (const ap of airportsList) {
         if (pageKey.includes(ap)) {
           cat = ap;
