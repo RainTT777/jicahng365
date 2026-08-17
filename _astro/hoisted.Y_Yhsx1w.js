@@ -1,1 +1,0 @@
-const e=document.getElementById("mobile-menu-btn"),n=document.getElementById("mobile-menu"),t=document.getElementById("menu-icon-open"),o=document.getElementById("menu-icon-close");e&&n&&t&&o&&e.addEventListener("click",()=>{n.classList.toggle("hidden"),t.classList.toggle("hidden"),o.classList.toggle("hidden")});
