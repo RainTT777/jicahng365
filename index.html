@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2026稳定机场推荐与稳定翻墙机场排行榜：晚高峰稳定IPLC专线机场与4K流媒体稳定不掉线机场测评 - 云轨导航</title>
   <meta name="description" content="【2026稳定机场推荐与排行榜】全站严选2026稳定机场、长期稳定机场推荐、高端稳定机场与性价比稳定机场。实测晚高峰稳定IPLC专线机场、4K流媒体稳定不掉线机场，提供便宜稳定机场测速比较与稳定翻墙机场排行榜选购指南。">
+  <meta name="keywords" content="云轨导航, 2026稳定机场, 长期稳定机场推荐, 高端稳定IPLC专线机场, 4K流媒体稳定不掉线, 稳定翻墙机场排行榜, 性价比稳定机场, 便宜稳定机场测速, 机场避坑指南, 科学上网节点">
 
                         <link rel="stylesheet" href="index.css?v=6">
   <style>
@@ -371,6 +372,22 @@
         <div class="home-v2-hero-left">
                     <h1 class="home-v2-hero-title">2026 稳定机场推荐排行榜与<br>长期高端稳定专线机场测评</h1>
           <p class="home-v2-hero-subtitle">本站专注研究 2026 稳定机场、晚高峰稳定 IPLC 专线机场、4K 流媒体稳定不掉线机场测评与性价比稳定机场选购指南。为您提供长期稳定机场推荐与稳定翻墙机场排行榜，全站实测节点防掉线保障。</p>
+          
+          <!-- Real-Time Interactive Search Bar -->
+          <div class="site-search-wrapper" style="margin: 22px 0 26px; position: relative; max-width: 640px;">
+            <div style="display: flex; align-items: center; background: #ffffff; border: 2px solid #2563eb; border-radius: 40px; padding: 5px 6px 5px 20px; box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" style="margin-right: 10px; flex-shrink: 0;">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="heroSearchInput" placeholder="全站搜索：机场名称 / IPLC专线 / Clash教程 / 流媒体 / 跑路避坑..." style="flex: 1; border: none; outline: none; font-size: 0.98rem; color: #0f172a; background: transparent; font-weight: 500;" autocomplete="off" />
+              <button type="button" id="heroSearchBtn" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; border: none; padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 0.92rem; cursor: pointer; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); transition: all 0.2s;">
+                搜索
+              </button>
+            </div>
+            <!-- Live Search Results Dropdown -->
+            <div id="heroSearchResults" style="display: none; position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15); max-height: 400px; overflow-y: auto; z-index: 1000; text-align: left; padding: 10px 0;"></div>
+          </div>
           
           <div class="home-v2-features-grid">
             <div class="home-v2-feature-card">
@@ -1925,10 +1942,88 @@
               setTimeout(function() {
                 targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
               }, 80);
-            }
-          }
+  <!-- Interactive Live Search Engine Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var searchInput = document.getElementById('heroSearchInput');
+      var searchBtn = document.getElementById('heroSearchBtn');
+      var resultsDropdown = document.getElementById('heroSearchResults');
+      
+      if (!searchInput || !resultsDropdown) return;
+
+      var searchDatabase = [
+        { name: "EdgeNova 专线机场", type: "精选机场", desc: "全线 IPLC 专线，晚高峰秒开 4K/8K 视频，解锁 Netflix 与 ChatGPT", url: "articles/edgenova.html", badge: "榜首推荐" },
+        { name: "极连云 机场", type: "精选机场", desc: "多站 BGP 中转优化，1倍率诚实扣费，高性价比影音与办公首选", url: "articles/jilianyun.html", badge: "性价比优选" },
+        { name: "光年梯 机场", type: "精选机场", desc: "极客抗封锁，支持最新 Hysteria 2 及 VLESS 协议，无日志隐私保护", url: "articles/guangnianti.html", badge: "极客协议" },
+        { name: "云图 机场", type: "精选机场", desc: "全节点 1 倍率诚实扣费，金融级专线传输，支持 5 台设备同时在线", url: "articles/yuntu.html", badge: "金融专线" },
+        { name: "快狸 机场", type: "精选机场", desc: "界面简洁，操作简单，适合科学上网新手，一键订阅快速连接", url: "articles/kuaili.html", badge: "新手友好" },
+        { name: "极速Cloud 机场", type: "精选机场", desc: "三网精品优化(CN2 GIA/9929/CMIN2)，VLESS 协议，全解锁 Apple TV", url: "articles/jisuyun.html", badge: "三网优化" },
+        { name: "瞬云 机场", type: "精选机场", desc: "主打轻量极速，连接耗时短，支持按量付费模式，最佳备用首选", url: "articles/shunyun.html", badge: "按量付费" },
+        { name: "速界 专线", type: "精选机场", desc: "专为跨服游戏玩家与低丢包追求者打造，IEPL 企业级专线传输", url: "articles/sujie.html", badge: "游戏专线" },
+        { name: "寰宇云 机场", type: "精选机场", desc: "全球多地部署节点，提供大带宽支持，配置原生住宅 IP 解锁", url: "articles/huanyuyun.html", badge: "大带宽" },
+        { name: "可信云 机场", type: "精选机场", desc: "高强度数据加密，无日志记录，极度保护用户隐私安全，支持匿名支付", url: "articles/kexinyun.html", badge: "隐私保护" },
+        
+        { name: "稳定机场怎么选？2026 高速防封 IPLC 专线与流媒体 AI 节点避坑全指南", type: "深度指南", desc: "全方位拆解线路原理、协议选型、晚高峰丢包测试及防跑路策略", url: "articles/stable-airport-selection-guide-2026.html", badge: "必读科普" },
+        { name: "2026顶级机场深度解析指南", type: "深度指南", desc: "企业级专线架构、全球地理节点布局、高阶选购与防坑避雷全景手册", url: "articles/top-airport-deep-parsing-guide-2026.html", badge: "深度解析" },
+        { name: "Windows 新手教程：Clash Verge 导入订阅与使用指南", type: "客户端教程", desc: "手把手教你在 Windows 电脑上安装配置 Clash Verge Rev 并实现分流", url: "articles/tutorial-win.html", badge: "Win教程" },
+        { name: "iOS 新手教程：Shadowrocket (小火箭) 节点添加与配置", type: "客户端教程", desc: "美区 Apple ID 获取、小火箭安装与扫码导入节点全流程指南", url: "articles/tutorial-ios.html", badge: "iOS教程" },
+        { name: "Android 新手教程：v2rayNG 全面配置教程", type: "客户端教程", desc: "安卓手机分应用代理设置、节点订阅更新与稳定性优化技巧", url: "articles/tutorial-and.html", badge: "安卓教程" },
+        { name: "Mac 新手教程：Stash / Clash Verge 使用指南", type: "客户端教程", desc: "macOS 平台代理工具下载、TUN 模式配置与分流规则设置", url: "articles/tutorial-mac.html", badge: "Mac教程" },
+        { name: "机场跑路黑名单与避坑警示预警列表", type: "避坑防骗", desc: "实时收录失联、断流及恶意充值跑路的黑名单列表与防骗指引", url: "avoid-scam.html", badge: "黑名单预警" },
+        { name: "2026 稳定翻墙机场排行榜", type: "榜单推荐", desc: "基于丢包率、延迟、晚高峰速率及性价比的综合排名", url: "ranking.html", badge: "排行榜" },
+        { name: "2026 稳定机场测评中心", type: "测评中心", desc: "客观对比 IPLC 专线、BGP 中转与直连线路的高峰期速率与测试报告", url: "airports.html", badge: "测评中心" }
+      ];
+
+      function performSearch() {
+        var query = searchInput.value.trim().toLowerCase();
+        if (!query) {
+          resultsDropdown.style.display = 'none';
+          return;
+        }
+
+        var matches = searchDatabase.filter(function(item) {
+          return item.name.toLowerCase().indexOf(query) !== -1 ||
+                 item.type.toLowerCase().indexOf(query) !== -1 ||
+                 item.desc.toLowerCase().indexOf(query) !== -1 ||
+                 item.badge.toLowerCase().indexOf(query) !== -1;
+        });
+
+        if (matches.length === 0) {
+          resultsDropdown.innerHTML = '<div style="padding: 16px; text-align: center; color: #64748b; font-size: 0.9rem;">未找到与 "<strong>' + escapeHtml(query) + '</strong>" 匹配的内容。<br><a href="knowledge.html" style="color: #2563eb; font-weight: bold; text-decoration: underline; margin-top: 6px; display: inline-block;">浏览完整科普知识库 &rarr;</a></div>';
+        } else {
+          var html = '<div style="padding: 4px 14px 8px; font-size: 0.75rem; color: #94a3b8; font-weight: 700; border-bottom: 1px solid #f1f5f9;">找到 ' + matches.length + ' 条相关结果：</div>';
+          matches.slice(0, 8).forEach(function(item) {
+            html += '<a href="' + item.url + '" style="display: block; padding: 12px 16px; border-bottom: 1px solid #f8fafc; text-decoration: none; transition: background 0.15s ease;" onmouseover="this.style.background=\'#f1f5f9\'" onmouseout="this.style.background=\'transparent\'">';
+            html += '  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">';
+            html += '    <span style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">' + escapeHtml(item.name) + '</span>';
+            html += '    <span style="font-size: 0.7rem; font-weight: 700; color: #2563eb; background: #eff6ff; border: 1px solid #bfdbfe; padding: 2px 8px; border-radius: 10px;">' + escapeHtml(item.badge) + '</span>';
+            html += '  </div>';
+            html += '  <div style="font-size: 0.8rem; color: #64748b; line-height: 1.4;" class="line-clamp-1">' + escapeHtml(item.desc) + '</div>';
+            html += '</a>';
+          });
+          resultsDropdown.innerHTML = html;
+        }
+        resultsDropdown.style.display = 'block';
+      }
+
+      function escapeHtml(text) {
+        return text.replace(/[&<>"']/g, function(m) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
         });
       }
+
+      searchInput.addEventListener('input', performSearch);
+      searchInput.addEventListener('focus', performSearch);
+
+      if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
+      }
+
+      document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !resultsDropdown.contains(e.target)) {
+          resultsDropdown.style.display = 'none';
+        }
+      });
     });
   </script>
 </body>
