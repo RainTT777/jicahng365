@@ -74,9 +74,9 @@ $main = @"
       <h2 style="font-size: 1.8rem; color: var(--text-primary); margin-bottom: 20px;">2026</h2>
       <div id="articleList" style="border-top: 1px solid var(--border-color);">
          
-         <a href="articles/edgenova.html" class="article-row" style="background-color: #f8fafc;">
+         <a href="articles/edgenova.html" class="article-row">
             <span class="article-date">05-24</span>
-            <span class="article-title" style="font-weight: 700;"><span style="background: #2563eb; color: #ffffff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-right: 8px; vertical-align: middle;">📌 置顶</span>EdgeNova机场深度评测：全线顶级专线，晚高峰无缝秒开流媒体首选</span>
+            <span class="article-title">EdgeNova机场深度评测：全线顶级专线，晚高峰无缝秒开流媒体首选</span>
          </a>
          <a href="articles/jilianyun.html" class="article-row">
             <span class="article-date">05-24</span>
