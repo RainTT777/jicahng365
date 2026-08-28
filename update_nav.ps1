@@ -8,6 +8,7 @@ foreach ($file in $root_files) {
         # Replace in navigation
         $content = $content -replace '>使用教程</a>', '>科普指南</a>'
         $content = $content -replace '>知识库</a>', '>科普指南</a>'
+        $content = $content -replace 'https://github.com/[^"]+', 'https://github.com/byjd007-netizen/jicahng365/blob/main/README.md'
         
         # Replace title if it exists
         $content = $content -replace '<title>知识库 - 云轨导航</title>', '<title>科普指南 - 云轨导航</title>'
