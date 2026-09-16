@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (pageKey.includes("shunyun")) airportName = "瞬云";
     else if (pageKey.includes("kuaili")) airportName = "快狸";
     else if (pageKey.includes("yuntu")) airportName = "云图";
+    else if (pageKey.includes("jiuyun")) airportName = "九云机场";
 
     const pools = {
       tutorial: [
@@ -255,6 +256,18 @@ document.addEventListener('DOMContentLoaded', () => {
           replies: [{ name: "云轨编辑组", isEditor: true, content: "感谢支持！云图机场全线采用金融级专线与诚实倍率，保障用户 24 小时高速畅连。" }]
         }
       ],
+      jiuyun: [
+        {
+          name: "月付小能手",
+          content: "九云机场的 6 元月付招财版太划算了，平时查资料和用 ChatGPT 完全够用，晚高峰看 4K 也挺流畅的！",
+          replies: []
+        },
+        {
+          name: "追剧达人",
+          content: "试用了 88 元年付套餐，算下来每月才 7 块多，配合 8 折优惠码 9yun 真的很香，香港和新加坡节点解锁 Netflix 很稳。",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "感谢反馈！九云机场主打平价海外中转，低门槛月付配合智能路由防封锁，性价比非常突出。" }]
+        }
+      ],
       knowledge: [
         {
           name: "技术先锋",
@@ -281,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (pageKey.includes("scam") || pageKey.includes("blacklist")) {
       cat = "scam";
     } else {
-      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili", "yuntu"];
+      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili", "yuntu", "jiuyun"];
       for (const ap of airportsList) {
         if (pageKey.includes(ap)) {
           cat = ap;

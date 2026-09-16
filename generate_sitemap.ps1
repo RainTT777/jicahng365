@@ -1,4 +1,4 @@
-﻿$baseDir = Get-Location
+$baseDir = if ($PSScriptRoot) { $PSScriptRoot } else { Get-Location }
 $sitemapPath = Join-Path $baseDir "sitemap.xml"
 $robotsPath = Join-Path $baseDir "robots.txt"
 

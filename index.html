@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -941,10 +941,60 @@
             </div>
           </div>
           
-          <!-- Card 4: 快狸 -->
+          <!-- Card 4: 九云机场 -->
           <div class="premium-recommend-card">
             <div class="prem-card-top">
               <span class="prem-card-no">No.4</span>
+              <span class="prem-card-badge prem-tag-value"> 平价中转</span>
+            </div>
+            <div class="prem-card-info-row">
+              <div class="prem-card-logo">
+                <img src="assets/images/jiuyun_logo.png" alt="九云机场" style="object-fit: contain; padding: 2px;">
+              </div>
+              <div class="prem-card-info-meta">
+                <h4 class="prem-card-name">九云机场</h4>
+                <p class="prem-card-price-label">月付 ¥6 起</p>
+              </div>
+              <div class="prem-card-score-box">
+                <div class="prem-card-score-val">9.3</div>
+                <div class="prem-card-score-label" style="color: #0ea5e9;">高性价比</div>
+              </div>
+            </div>
+            <div class="prem-card-pills-row">
+              <span class="prem-pill">月付6元起</span>
+              <span class="prem-pill">海外中转</span>
+              <span class="prem-pill">8折优惠码9yun</span>
+              <span class="prem-pill">流媒体/AI解锁</span>
+            </div>
+            <div class="prem-card-features-grid">
+              <div class="prem-feature-item">
+                <svg class="prem-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>海外中转优化</span>
+              </div>
+              <div class="prem-feature-item">
+                <svg class="prem-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>8折优惠码</span>
+              </div>
+              <div class="prem-feature-item">
+                <svg class="prem-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>4K视频秒开</span>
+              </div>
+              <div class="prem-feature-item">
+                <svg class="prem-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>3台并发在线</span>
+              </div>
+            </div>
+            <p class="prem-card-review"><strong>简短评测：</strong>九云机场主打平民级高性价比中转网络，月付 6 元起，晚高峰 4K 秒开，支持 8 折优惠码 9yun，原生流媒体与 ChatGPT 解锁全覆盖。</p>
+            <div class="prem-card-btns-row">
+              <a href="articles/jiuyun.html" class="prem-btn-review" style="background-color: #0ea5e9; color: #ffffff !important; box-shadow: 0 4px 10px rgba(14, 165, 233, 0.25);">查看评测</a>
+              <a href="https://九云.com" target="_blank" class="prem-btn-site">官网 ↗</a>
+            </div>
+          </div>
+
+          <!-- Card 5: 快狸 -->
+          <div class="premium-recommend-card">
+            <div class="prem-card-top">
+              <span class="prem-card-no">No.5</span>
               <span class="prem-card-badge prem-tag-value"> 性价比高</span>
             </div>
             <div class="prem-card-info-row">
@@ -991,10 +1041,10 @@
             </div>
           </div>
           
-          <!-- Card 5: 云图 -->
+          <!-- Card 6: 云图 -->
           <div class="premium-recommend-card">
             <div class="prem-card-top">
-              <span class="prem-card-no">No.5</span>
+              <span class="prem-card-no">No.6</span>
               <span class="prem-card-badge prem-tag-hot"> 金融专线</span>
             </div>
             <div class="prem-card-info-row">
@@ -1041,10 +1091,10 @@
             </div>
           </div>
           
-          <!-- Card 6: 瞬云 -->
+          <!-- Card 7: 瞬云 -->
           <div class="premium-recommend-card">
             <div class="prem-card-top">
-              <span class="prem-card-no">No.6</span>
+              <span class="prem-card-no">No.7</span>
               <span class="prem-card-badge prem-tag-light"> 轻量极速</span>
             </div>
             <div class="prem-card-info-row">
@@ -1939,6 +1989,7 @@
       if (!searchInput || !resultsDropdown) return;
 
       var searchDatabase = [
+        { name: "九云 机场", type: "精选机场", desc: "平民级高性价比海外中转网络，月付6元起，8折优惠码9yun，晚高峰4K秒开", url: "articles/jiuyun.html", badge: "平价中转" },
         { name: "EdgeNova 专线机场", type: "精选机场", desc: "全线 IPLC 专线，晚高峰秒开 4K/8K 视频，解锁 Netflix 与 ChatGPT", url: "articles/edgenova.html", badge: "榜首推荐" },
         { name: "极连云 机场", type: "精选机场", desc: "多站 BGP 中转优化，1倍率诚实扣费，高性价比影音与办公首选", url: "articles/jilianyun.html", badge: "性价比优选" },
         { name: "光年梯 机场", type: "精选机场", desc: "极客抗封锁，支持最新 Hysteria 2 及 VLESS 协议，无日志隐私保护", url: "articles/guangnianti.html", badge: "极客协议" },
