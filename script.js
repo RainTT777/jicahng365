@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (pageKey.includes("kuaili")) airportName = "快狸";
     else if (pageKey.includes("yuntu")) airportName = "云图";
     else if (pageKey.includes("jiuyun")) airportName = "九云机场";
+    else if (pageKey.includes("baoyun")) airportName = "宝云机场";
 
     const pools = {
       tutorial: [
@@ -254,6 +255,18 @@ document.addEventListener('DOMContentLoaded', () => {
           name: "数字游民",
           content: "试用了一下梦图套餐，300G 流量加上 5 台设备同在，全节点没有虚高倍率陷阱，晚高峰测速非常满意！",
           replies: [{ name: "云轨编辑组", isEditor: true, content: "感谢支持！云图机场全线采用金融级专线与诚实倍率，保障用户 24 小时高速畅连。" }]
+        }
+      ],
+      baoyun: [
+        {
+          name: "学术汪",
+          content: "宝云机场的 4 元月付福宝套餐试错成本太低了，买来用来查 Google 学术和用 ChatGPT 响应速度非常快！",
+          replies: []
+        },
+        {
+          name: "备用保命党",
+          content: "年付 32 元包含每月 128G 流量，买了一个专门作为主力梯子故障时的备用防失联手段，性价比爆棚。",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "感谢反馈！宝云机场定位超轻量平民节点与备用容灾，在极低资费下保持了优秀的可用性。" }]
         }
       ],
       jiuyun: [

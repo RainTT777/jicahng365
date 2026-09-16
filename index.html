@@ -926,10 +926,60 @@
             </div>
           </div>
 
-          <!-- Card 5: 快狸 -->
+          <!-- Card 5: 宝云机场 -->
           <div class="premium-recommend-card">
             <div class="prem-card-top">
               <span class="prem-card-no">No.5</span>
+              <span class="prem-card-badge prem-tag-value">超低门槛</span>
+            </div>
+            <div class="prem-card-info-row">
+              <div class="prem-card-logo">
+                <img src="assets/images/baoyun_logo.png" alt="宝云机场" style="object-fit: contain; padding: 2px;">
+              </div>
+              <div class="prem-card-info-meta">
+                <h4 class="prem-card-name">宝云机场</h4>
+                <p class="prem-card-price-label">月付 ¥4 起</p>
+              </div>
+              <div class="prem-card-score-box">
+                <div class="prem-card-score-val">9.3</div>
+                <div class="prem-card-score-label">备用容灾</div>
+              </div>
+            </div>
+            <div class="prem-card-pills-row">
+              <span class="prem-pill">月付4元起</span>
+              <span class="prem-pill">年付32元特惠</span>
+              <span class="prem-pill">智能路由</span>
+              <span class="prem-pill">2台并发</span>
+            </div>
+            <div class="prem-card-features-grid">
+              <div class="prem-feature-item">
+                <svg class="prem-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>月付4元起</span>
+              </div>
+              <div class="prem-feature-item">
+                <svg class="prem-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>年付32元特惠</span>
+              </div>
+              <div class="prem-feature-item">
+                <svg class="prem-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>智能路由调度</span>
+              </div>
+              <div class="prem-feature-item">
+                <svg class="prem-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>常规流媒体AI</span>
+              </div>
+            </div>
+            <p class="prem-card-review"><strong>简短评测：</strong>宝云机场主打平民轻量级加速节点与备用容灾，月付 4 元起 / 年付 32 元，支持常规流媒体与 ChatGPT 文本交互。</p>
+            <div class="prem-card-btns-row">
+              <a href="articles/baoyun.html" class="prem-btn-review">查看评测</a>
+              <a href="https://宝云.com" target="_blank" class="prem-btn-site">官网 </a>
+            </div>
+          </div>
+
+          <!-- Card 6: 快狸 -->
+          <div class="premium-recommend-card">
+            <div class="prem-card-top">
+              <span class="prem-card-no">No.6</span>
               <span class="prem-card-badge prem-tag-value">性价比高</span>
             </div>
             <div class="prem-card-info-row">
@@ -1890,6 +1940,7 @@
       if (!searchInput || !resultsDropdown) return;
 
       var searchDatabase = [
+        { name: "宝云 机场", type: "精选机场", desc: "平民轻量级加速节点，月付4元起/年付32元，支持常规流媒体与ChatGPT", url: "articles/baoyun.html", badge: "超低门槛" },
         { name: "九云 机场", type: "精选机场", desc: "平民级高性价比海外中转网络，月付6元起，8折优惠码9yun，晚高峰4K秒开", url: "articles/jiuyun.html", badge: "平价中转" },
         { name: "EdgeNova 专线机场", type: "精选机场", desc: "全线 IPLC 专线，晚高峰秒开 4K/8K 视频，解锁 Netflix 与 ChatGPT", url: "articles/edgenova.html", badge: "榜首推荐" },
         { name: "极连云 机场", type: "精选机场", desc: "多站 BGP 中转优化，1倍率诚实扣费，高性价比影音与办公首选", url: "articles/jilianyun.html", badge: "性价比优选" },

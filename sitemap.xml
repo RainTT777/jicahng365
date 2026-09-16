@@ -241,6 +241,18 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://jichang365.com/articles/baoyun</loc>
+        <lastmod>2026-09-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/baoyun.html</loc>
+        <lastmod>2026-09-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://jichang365.com/articles/beginner-1</loc>
         <lastmod>2026-09-16</lastmod>
         <changefreq>weekly</changefreq>
@@ -1064,6 +1076,18 @@
     </url>
     <url>
         <loc>https://yunguidaohang.com/articles/article-9.html</loc>
+        <lastmod>2026-09-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yunguidaohang.com/articles/baoyun</loc>
+        <lastmod>2026-09-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yunguidaohang.com/articles/baoyun.html</loc>
         <lastmod>2026-09-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
