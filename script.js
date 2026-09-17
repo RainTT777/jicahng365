@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (pageKey.includes("baoyun")) airportName = "宝云机场";
     else if (pageKey.includes("liyun")) airportName = "鲤云机场";
     else if (pageKey.includes("shanshuiyun")) airportName = "山水云机场";
+    else if (pageKey.includes("miaomiaoyun")) airportName = "秒秒云机场";
 
     const pools = {
       tutorial: [
@@ -317,6 +318,23 @@ document.addEventListener('DOMContentLoaded', () => {
           replies: []
         }
       ],
+      miaomiaoyun: [
+        {
+          name: "防失联党",
+          content: "59 块钱买 100G 不限时包放在软件里做备用梯子真的太划算了，平时不用不扣流量，随时救急！",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "感谢反馈！秒秒云 59 元不限时包确实拉低了长效容灾门槛，配合智能路由择优体验相当不错。" }]
+        },
+        {
+          name: "多设备数码控",
+          content: "买了 88 元的年付 100G 特惠，居然直接给了 5 台设备并发，手机电脑平板全连上都够用，超值！",
+          replies: []
+        },
+        {
+          name: "ChatGPT研究员",
+          content: "探花套餐 9 块钱性价比很高，智能路由分流很聪明，用 ChatGPT 和 Claude 从来没有被风控过。",
+          replies: []
+        }
+      ],
       knowledge: [
         {
           name: "技术先锋",
@@ -343,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (pageKey.includes("scam") || pageKey.includes("blacklist")) {
       cat = "scam";
     } else {
-      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili", "yuntu", "jiuyun", "baoyun", "liyun", "shanshuiyun"];
+      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili", "yuntu", "jiuyun", "baoyun", "liyun", "shanshuiyun", "miaomiaoyun"];
       for (const ap of airportsList) {
         if (pageKey.includes(ap)) {
           cat = ap;

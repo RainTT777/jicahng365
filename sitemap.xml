@@ -481,6 +481,18 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://jichang365.com/articles/miaomiaoyun</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/miaomiaoyun.html</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://jichang365.com/articles/monthly-quarterly-yearly-plan-choice</loc>
         <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
@@ -1340,6 +1352,18 @@
     </url>
     <url>
         <loc>https://yunguidaohang.com/articles/liyun.html</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yunguidaohang.com/articles/miaomiaoyun</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yunguidaohang.com/articles/miaomiaoyun.html</loc>
         <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
