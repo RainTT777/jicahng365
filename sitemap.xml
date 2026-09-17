@@ -865,6 +865,18 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://jichang365.com/articles/xiongmaocloud</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/xiongmaocloud.html</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://jichang365.com/articles/yaml-config-import-error</loc>
         <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
@@ -1748,6 +1760,18 @@
     </url>
     <url>
         <loc>https://yunguidaohang.com/articles/wireshark.html</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yunguidaohang.com/articles/xiongmaocloud</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yunguidaohang.com/articles/xiongmaocloud.html</loc>
         <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
