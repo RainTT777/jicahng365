@@ -421,6 +421,18 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://jichang365.com/articles/jinyun</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/jinyun.html</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://jichang365.com/articles/jisuyun</loc>
         <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
@@ -1292,6 +1304,18 @@
     </url>
     <url>
         <loc>https://yunguidaohang.com/articles/jilianyun.html</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yunguidaohang.com/articles/jinyun</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yunguidaohang.com/articles/jinyun.html</loc>
         <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (pageKey.includes("liyun")) airportName = "鲤云机场";
     else if (pageKey.includes("shanshuiyun")) airportName = "山水云机场";
     else if (pageKey.includes("miaomiaoyun")) airportName = "秒秒云机场";
+    else if (pageKey.includes("jinyun")) airportName = "锦云机场";
 
     const pools = {
       tutorial: [
