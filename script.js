@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (pageKey.includes("yuntu")) airportName = "云图";
     else if (pageKey.includes("jiuyun")) airportName = "九云机场";
     else if (pageKey.includes("baoyun")) airportName = "宝云机场";
+    else if (pageKey.includes("liyun")) airportName = "鲤云机场";
 
     const pools = {
       tutorial: [
@@ -281,6 +282,23 @@ document.addEventListener('DOMContentLoaded', () => {
           replies: [{ name: "云轨编辑组", isEditor: true, content: "感谢反馈！九云机场主打平价海外中转，低门槛月付配合智能路由防封锁，性价比非常突出。" }]
         }
       ],
+      liyun: [
+        {
+          name: "巴哈姆特狂魔",
+          content: "月付 5 块钱还给配台湾中转节点真的太良心了，看动画疯完全不卡，小流量够我用了。",
+          replies: []
+        },
+        {
+          name: "AI科研小能手",
+          content: "小流量机场出口确实比那些几百G的干净太多，用 ChatGPT 和 Claude 终于不弹 Cloudflare 验证码了。",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "感谢反馈！鲤云机场专注纯净小流量，避免了大流量滥用，IP信誉度和稳定性非常出色。" }]
+        },
+        {
+          name: "Clash玩家",
+          content: "刚开始老客户端一直超时，看了文章把 Clash Verge DNS 覆写开启就好了，AnyTLS 速度很稳。",
+          replies: []
+        }
+      ],
       knowledge: [
         {
           name: "技术先锋",
@@ -307,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (pageKey.includes("scam") || pageKey.includes("blacklist")) {
       cat = "scam";
     } else {
-      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili", "yuntu", "jiuyun"];
+      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili", "yuntu", "jiuyun", "baoyun", "liyun"];
       for (const ap of airportsList) {
         if (pageKey.includes(ap)) {
           cat = ap;
@@ -316,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    let pool = pools[cat];
+    let pool = pools[cat] || pools["knowledge"];
     
     // Choose 2 distinct comments from the pool
     let selectedIndices = [];
@@ -611,5 +629,59 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initComments();
-  // --- COMMENTS SYSTEM CODE END ---
+
+  // --- DYNAMIC TOC GENERATION ---
+  function initDynamicTOC() {
+    const articleBody = document.getElementById('articleBody');
+    const tocNav = document.getElementById('toc');
+    if (!articleBody || !tocNav) return;
+
+    // Clear existing TOC if any
+    tocNav.innerHTML = '';
+
+    const headers = articleBody.querySelectorAll('h2, h3');
+    if (headers.length === 0) return;
+
+    const ul = document.createElement('ul');
+    ul.className = 'toc-list';
+
+    headers.forEach((header, index) => {
+      const id = 'heading-' + index;
+      header.id = id;
+
+      const li = document.createElement('li');
+      li.className = header.tagName.toLowerCase() === 'h2' ? 'toc-h2' : 'toc-h3';
+
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = header.textContent;
+
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+
+    tocNav.appendChild(ul);
+
+    // Highlight active TOC item on scroll
+    const tocLinks = tocNav.querySelectorAll('a');
+    window.addEventListener('scroll', () => {
+      let currentId = '';
+      headers.forEach(header => {
+        const rect = header.getBoundingClientRect();
+        if (rect.top <= 120) {
+          currentId = header.id;
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentId) {
+          link.classList.add('active');
+        }
+      });
+    });
+  }
+
+  initDynamicTOC();
+  // --- COMMENTS SYSTEM & TOC CODE END ---
 });
