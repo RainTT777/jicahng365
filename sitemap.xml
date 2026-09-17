@@ -637,6 +637,18 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://jichang365.com/articles/shanshuiyun</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jichang365.com/articles/shanshuiyun.html</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://jichang365.com/articles/shunyun</loc>
         <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
@@ -1484,6 +1496,18 @@
     </url>
     <url>
         <loc>https://yunguidaohang.com/articles/shadowrocket.html</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yunguidaohang.com/articles/shanshuiyun</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yunguidaohang.com/articles/shanshuiyun.html</loc>
         <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

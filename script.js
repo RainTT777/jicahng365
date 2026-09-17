@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (pageKey.includes("jiuyun")) airportName = "九云机场";
     else if (pageKey.includes("baoyun")) airportName = "宝云机场";
     else if (pageKey.includes("liyun")) airportName = "鲤云机场";
+    else if (pageKey.includes("shanshuiyun")) airportName = "山水云机场";
 
     const pools = {
       tutorial: [
@@ -299,6 +300,23 @@ document.addEventListener('DOMContentLoaded', () => {
           replies: []
         }
       ],
+      shanshuiyun: [
+        {
+          name: "出差极客",
+          content: "99 元买了个 100G 不限时套餐做备用梯子真的太香了！平时出差打开就能用，完全不用担心月底重置清零的问题。",
+          replies: [{ name: "云轨编辑组", isEditor: true, content: "感谢反馈！山水云的不限时长套餐专为低频高稳定性要求的商务人士设计，配合专线+家宽IP体验极佳。" }]
+        },
+        {
+          name: "ChatGPT重度用户",
+          content: "家宽 IP 节点的纯净度确实牛，用 GPT-4o 写代码和分析数据从来没弹过 Cloudflare 机器人验证码，提效神器！",
+          replies: []
+        },
+        {
+          name: "全家桶追剧党",
+          content: "试了下琴套餐，1G 突发带宽看 YouTube 4K 简直秒开，拖动进度条丝滑不卡顿，专线确实稳。",
+          replies: []
+        }
+      ],
       knowledge: [
         {
           name: "技术先锋",
@@ -325,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (pageKey.includes("scam") || pageKey.includes("blacklist")) {
       cat = "scam";
     } else {
-      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili", "yuntu", "jiuyun", "baoyun", "liyun"];
+      const airportsList = ["sujie", "edgenova", "guangnianti", "huanyuyun", "jilianyun", "kexinyun", "shunyun", "kuaili", "yuntu", "jiuyun", "baoyun", "liyun", "shanshuiyun"];
       for (const ap of airportsList) {
         if (pageKey.includes(ap)) {
           cat = ap;
